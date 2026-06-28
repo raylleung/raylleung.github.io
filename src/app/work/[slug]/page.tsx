@@ -4,6 +4,10 @@ import { notFound } from "next/navigation";
 import { projects, getProject, adjacent } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import ProjectStory from "@/components/ProjectStory";
+import StoryGallery from "@/components/StoryGallery";
+import { rabbitChapters } from "@/lib/rabbitStory";
+import SoarDeck from "@/components/SoarDeck";
+import { soarPhases } from "@/lib/soarStory";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -87,7 +91,12 @@ export default async function ProjectPage({ params }: Params) {
       {/* STORY */}
       {p.story ? <ProjectStory story={p.story} /> : null}
 
-      {/* GALLERY */}
+      {/* GALLERY — rabbit gets the chaptered story layout, soar the interactive deck; others use the default flow */}
+      {p.slug === "rabbit" ? (
+        <StoryGallery chapters={rabbitChapters} />
+      ) : p.slug === "soar" ? (
+        <SoarDeck phases={soarPhases} />
+      ) : (
       <div className="gallery-wrap">
         {rows.map((row, ri) =>
           row.length === 1 ? (
@@ -107,6 +116,7 @@ export default async function ProjectPage({ params }: Params) {
           )
         )}
       </div>
+      )}
 
       {/* PREV / NEXT */}
       <nav className="proj-nav" aria-label="Project navigation">
