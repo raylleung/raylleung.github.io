@@ -36,7 +36,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="mono-sm" style={{ color: "rgba(242,238,229,0.55)" }}>
+          <p className="mono-sm" style={{ color: "rgba(255,255,255,0.55)" }}>
             © {new Date().getFullYear()} {site.name}
           </p>
         </div>

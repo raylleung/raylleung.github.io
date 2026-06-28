@@ -2,17 +2,18 @@
 
 /* ============ Design tokens — "Performance Lab" ============ */
 :root {
-  --bone: #f2eee5;
-  --bone-2: #eae4d7;
-  --paper: #f7f4ec;
-  --ink: #16140f;
-  --ink-soft: #6e685c;
-  --ink-2: #1d1b15;
-  --line: rgba(22, 20, 15, 0.16);
-  --line-soft: rgba(22, 20, 15, 0.09);
-  --accent: #ff4719;
-  --accent-press: #e23c12;
-  --accent-ink: #2a0d04;
+  /* Monochrome "black & white" palette */
+  --bone: #ffffff;
+  --bone-2: #f0f0f0;
+  --paper: #f6f6f6;
+  --ink: #111111;
+  --ink-soft: #6b6b6b;
+  --ink-2: #1a1a1a;
+  --line: rgba(0, 0, 0, 0.14);
+  --line-soft: rgba(0, 0, 0, 0.08);
+  --accent: #111111;
+  --accent-press: #3a3a3a;
+  --accent-ink: #ffffff;
 
   --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
@@ -149,7 +150,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 0;
 }
-.marquee-item .sep { color: var(--accent); margin: 0 clamp(18px, 2vw, 28px); }
+.marquee-item .sep { color: rgba(255, 255, 255, 0.55); margin: 0 clamp(18px, 2vw, 28px); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(var(--shift, 50%) * -1)); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
@@ -235,7 +236,7 @@ img { display: block; max-width: 100%; }
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
   min-height: 160px; transition: background 0.3s;
 }
-.tile-cta:hover { background: var(--accent); }
+.tile-cta:hover { background: var(--bone); color: var(--ink); }
 .tile-cta .big { font-family: var(--font-display); font-size: 30px; letter-spacing: 0.04em; }
 
 /* ============ Buttons / links ============ */
@@ -258,10 +259,10 @@ img { display: block; max-width: 100%; }
 .foot-soc { display: flex; flex-wrap: wrap; gap: 8px 10px; }
 .foot-soc a {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  border: 1px solid rgba(242, 238, 229, 0.3); border-radius: 999px; padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 999px; padding: 9px 16px;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.foot-soc a:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.foot-soc a:hover { background: var(--bone); border-color: var(--bone); color: var(--ink); }
 
 /* ============ Password gate ============ */
 .gate {
@@ -323,7 +324,7 @@ img { display: block; max-width: 100%; }
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
-.gate-btn:hover { background: var(--accent); border-color: var(--accent); }
+.gate-btn:hover { background: var(--bone); color: var(--ink); border-color: var(--ink); }
 .gate-error {
   margin: 14px 0 0;
   font-family: var(--font-mono);
@@ -484,7 +485,7 @@ img { display: block; max-width: 100%; }
   background: #fff;
   border: 1px solid var(--line);
   overflow: hidden;
-  box-shadow: 0 24px 50px -34px rgba(22, 20, 15, 0.5);
+  box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.42);
 }
 .plate-img img { width: 100%; height: auto; display: block; }
 .plate-cap { margin: 13px 2px 0; }
@@ -526,6 +527,7 @@ img { display: block; max-width: 100%; }
 .deck-phase:hover { background: var(--bone-2); }
 .deck-phase.active { background: var(--ink); color: var(--bone); }
 .deck-phase-num { color: var(--accent); }
+.deck-phase.active .deck-phase-num { color: var(--bone); }
 .deck-phase-name {
   font-family: var(--font-sans);
   font-weight: 500;
@@ -572,7 +574,7 @@ img { display: block; max-width: 100%; }
   padding: clamp(12px, 2vw, 26px);
   background: #fff;
   border: 1px solid var(--line);
-  box-shadow: 0 28px 60px -34px rgba(22, 20, 15, 0.55);
+  box-shadow: 0 28px 60px -34px rgba(0, 0, 0, 0.46);
   cursor: grab;
 }
 .deck-card:active { cursor: grabbing; }
