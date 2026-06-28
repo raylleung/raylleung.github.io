@@ -8,6 +8,7 @@ import StoryGallery from "@/components/StoryGallery";
 import { rabbitChapters } from "@/lib/rabbitStory";
 import SoarDeck from "@/components/SoarDeck";
 import { soarPhases } from "@/lib/soarStory";
+import SuperShoesCase from "@/components/SuperShoesCase";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -96,6 +97,8 @@ export default async function ProjectPage({ params }: Params) {
         <StoryGallery chapters={rabbitChapters} />
       ) : p.slug === "soar" ? (
         <SoarDeck phases={soarPhases} />
+      ) : p.slug === "super-shoes" ? (
+        <SuperShoesCase />
       ) : (
       <div className="gallery-wrap">
         {rows.map((row, ri) =>
