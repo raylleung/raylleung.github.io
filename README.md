@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# raylleung.github.io
 
-## Getting Started
+Ray Leung — footwear & product design portfolio. Built with **Next.js** (App Router, static export) and deployed to **GitHub Pages**.
 
-First, run the development server:
+## Develop
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build (static export)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # outputs static site to ./out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
+Pushing to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`),
+which builds the static export and publishes it to GitHub Pages automatically.
+No manual steps — just commit and push.
 
-To learn more about Next.js, take a look at the following resources:
+> The local `deploy.sh` script (manual build-and-push) is no longer needed now that
+> CI handles deploys, but it's kept for reference.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `src/app/` — pages (`page.tsx` home, `about/`, `contact/`, `work/[slug]/` case studies), `globals.css`, `layout.tsx`
+- `src/components/` — `Nav`, `Footer`, `Marquee`, `ProjectGrid`, `ProjectStory`, `Reveal`, `Gate`
+- `src/lib/` — `projects.ts` (project data + copy), `site.ts` (name, role, PRs, socials, nav)
+- `public/img/` — optimized project imagery
 
-## Deploy on Vercel
+## Password gate
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The site is behind a light client-side password gate (`src/components/Gate.tsx`).
+This is a deterrent for casual visitors, **not real security** — on a static site the
+password lives in the page source. Change `PASSWORD` in that file to update it.
