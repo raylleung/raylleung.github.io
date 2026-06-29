@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: Params) {
       </section>
 
       {/* COVER */}
-      <div className="proj-cover">
+      <div className={`proj-cover${p.slug === "super-shoes" ? " proj-cover--inset" : ""}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={p.cover} alt={`${p.title} — cover`} />
       </div>

@@ -667,7 +667,9 @@ img { display: block; max-width: 100%; }
   padding-block: clamp(40px, 6vw, 96px);
 }
 .ss-chapter + .ss-chapter { margin-top: clamp(80px, 12vw, 176px); }
-.ss-chapter > * + * { margin-top: clamp(30px, 4.5vw, 64px); }
+/* Higher specificity than the per-element `margin: 0` resets (.ss-fig, .ss-bigq)
+   so figures and pull-quotes get the inter-block spacing too. */
+.ss > .ss-chapter > * + * { margin-top: clamp(44px, 6.5vw, 100px); }
 .ss-chapter-head {
   border-top: 1px solid var(--ink);
   padding-top: clamp(20px, 3vw, 40px);
@@ -693,7 +695,7 @@ img { display: block; max-width: 100%; }
   margin: 0 0 0.6em;
 }
 .ss-eyebrow { display: block; margin: 0 0 clamp(14px, 2vw, 22px); }
-.ss-block > * + * { margin-top: clamp(14px, 2vw, 22px); }
+.ss-block > * + * { margin-top: clamp(18px, 2.6vw, 32px); }
 
 /* gait steps */
 .ss-gait { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 44px); }
@@ -734,8 +736,8 @@ img { display: block; max-width: 100%; }
 .ss-bigq-sm { font-size: clamp(20px, 3vw, 34px); max-width: 38ch; font-weight: 500; }
 
 /* two-column */
-.ss-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 64px); align-items: start; }
-.ss-two-text > * + * { margin-top: 1em; }
+.ss-two { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.ss-two-text > * + * { margin-top: 1.2em; }
 
 /* two-hour barrier */
 .ss-barrier { border: 1px solid var(--line); padding: clamp(20px, 3vw, 32px); background: var(--paper); }
@@ -855,4 +857,14 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .ss-prona-fill { transition: none; }
   .ss-fork-body, .ss-build-body { animation: none; }
+}
+
+/* Inset (minimized) project cover — used on the Super Shoes page.
+   Side margin resolves to half the text column's margin and scales with the
+   viewport: image width = 50vw + 540px − pad, capped to 100% − pad on small screens. */
+.proj-cover--inset {
+  width: min(calc(100% - var(--pad)), calc(50vw + 540px - var(--pad)));
+  margin: calc(var(--pad) / 2) auto;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.42);
 }
