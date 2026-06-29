@@ -143,7 +143,7 @@ function ChapterHead({ num, kicker, title }: { num: string; kicker: string; titl
   return (
     <Reveal className="ss-chapter-head">
       <p className="chapter-kicker mono accent">{num} — {kicker}</p>
-      <h2 className="chapter-title display">{title}</h2>
+      <h2 className="ss-chapter-title">{title}</h2>
     </Reveal>
   );
 }

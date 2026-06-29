@@ -56,8 +56,19 @@ export default async function ProjectPage({ params }: Params) {
           <p className="mono accent" style={{ marginBottom: 16 }}>
             {p.index} / {p.category}
           </p>
-          {/* rabbit uses the landing-page hero text style (lowercase Inter); others use the big display face */}
-          <h1 className={p.slug === "rabbit" ? "hero-line" : "display proj-hero-title"}>{p.title}</h1>
+          {/* rabbit + super-shoes use the landing-page hero text style (size/weight);
+              rabbit stays lowercase, super-shoes keeps its title case; others use the big display face */}
+          <h1
+            className={
+              p.slug === "rabbit"
+                ? "hero-line"
+                : p.slug === "super-shoes"
+                  ? "hero-line proj-title--titlecase"
+                  : "display proj-hero-title"
+            }
+          >
+            {p.title}
+          </h1>
           <p style={{ marginTop: 18, maxWidth: "54ch", fontSize: "clamp(16px,1.6vw,21px)", lineHeight: 1.6 }}>
             {p.blurb}
           </p>
