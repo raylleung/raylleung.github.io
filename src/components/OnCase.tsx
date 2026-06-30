@@ -209,7 +209,7 @@ function ChapterHead({ num, kicker, title }: { num: string; kicker: string; titl
 function LayerBuild({ src, alt, layers }: { src: string; alt: string; layers: { n: string; title: string; body: string }[] }) {
   const [active, setActive] = useState(0);
   return (
-    <div className="ss-build">
+    <div className="ss-build on-build-wide">
       <Reveal className="ss-build-fig">
         <div className="ss-fig-img">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -407,7 +407,7 @@ export default function OnCase() {
         <ChapterHead num="09" kicker="Final Concept" title="On Cloudboom Pulse" />
         <Reveal className="ss-lede"><p className="ss-def">On Cloudboom Pulse</p><p className="ss-body">{COPY.conceptOverview}</p></Reveal>
 
-        <Fig src={IMG.mockupSide} alt="Mockup of the Cloudboom Pulse" caption="Mock-up — the heat-shrink upper over the CloudTec chassis" />
+        <Fig src={IMG.stack} alt="The prototype upper alongside its On references" caption="The prototype upper, beside its Cloudboom Echo 3 and Cloudmonster Hyper references" />
 
         <Reveal className="ss-block">
           <p className="ss-eyebrow mono muted">Upper & outsole — select a part</p>

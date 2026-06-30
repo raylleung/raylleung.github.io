@@ -127,9 +127,9 @@ function CountUp({ to, decimals = 0, prefix = "", suffix = "", duration = 1300 }
   return <span ref={ref}>{prefix}{val.toFixed(decimals)}{suffix}</span>;
 }
 
-function Fig({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+function Fig({ src, alt, caption, wide }: { src: string; alt: string; caption?: string; wide?: boolean }) {
   return (
-    <Reveal className="ss-fig">
+    <Reveal className={`ss-fig${wide ? " ss-fig--wide" : ""}`}>
       <div className="ss-fig-img">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={src} alt={alt} loading="lazy" decoding="async" />
@@ -413,7 +413,7 @@ export default function SuperShoesCase() {
           </Reveal>
         </div>
 
-        <Fig src={IMG.process} alt="Plate and midsole ideation sketches" caption="Plate and midsole ideation — toward a forked, dynamic geometry" />
+        <Fig src={IMG.process} alt="Plate and midsole ideation sketches" caption="Plate and midsole ideation — toward a forked, dynamic geometry" wide />
         <Reveal className="ss-lede"><p className="ss-body">{COPY.plateIdeation}</p></Reveal>
 
         <Fig src={IMG.prototypes} alt="Physical plate and midsole prototypes" caption="Key prototypes — 3D-printed plates, foam-clay and EVA midsoles" />

@@ -909,8 +909,8 @@ img { display: block; max-width: 100%; }
 
 /* persona toggle */
 .on-persona-body { animation: ssFade 0.35s ease; }
-.on-persona-list { margin: 14px 0 0; padding: 0; list-style: none; }
-.on-persona-list li { position: relative; padding-left: 20px; margin-bottom: 12px; font-size: clamp(14px, 1.4vw, 17px); line-height: 1.55; color: var(--ink-soft); }
+.on-persona-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.4vw, 36px); }
+.on-persona-list li { position: relative; padding-left: 20px; margin: 0; font-size: clamp(14px, 1.4vw, 17px); line-height: 1.55; color: var(--ink-soft); }
 .on-persona-list li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 1px; background: var(--accent); }
 
 /* recommended combinations */
@@ -934,3 +934,69 @@ img { display: block; max-width: 100%; }
   .on-combos { grid-template-columns: 1fr; }
   .on-sizes { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ============ Enlarged figures ============ */
+/* Break a figure out wider than the text column (used for detail-heavy boards). */
+.ss-fig--wide .ss-fig-img {
+  width: min(calc(100vw - 2 * var(--pad)), 1340px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+/* Persona: full-width image with the supporting points in a row beneath. */
+.on-persona-body { grid-template-columns: 1fr; }
+/* Modular build: give the breakdown image more room beside the selector. */
+.on-build-wide { grid-template-columns: 1.6fr 1fr; }
+
+@media (max-width: 760px) {
+  .on-build-wide { grid-template-columns: 1fr; }
+  .on-persona-list { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* ============ Lightbox (click any image to zoom) ============ */
+.ss-fig-img img,
+.proj-cover img,
+.plate-img img { cursor: zoom-in; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 56px);
+  background: color-mix(in srgb, var(--ink) 60%, transparent);
+  backdrop-filter: blur(16px);
+  cursor: zoom-out;
+  animation: lbFade 0.2s ease;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: default;
+  background: #fff;
+  box-shadow: 0 40px 90px -20px rgba(0, 0, 0, 0.65);
+}
+.lightbox-close {
+  position: fixed;
+  top: clamp(12px, 2vw, 22px);
+  right: clamp(12px, 2vw, 24px);
+  z-index: 201;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--bone) 60%, transparent);
+  background: color-mix(in srgb, var(--ink) 40%, transparent);
+  color: var(--bone);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s;
+}
+.lightbox-close:hover { background: var(--ink); }
+@keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
