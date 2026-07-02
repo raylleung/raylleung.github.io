@@ -11,6 +11,7 @@ import { soarPhases } from "@/lib/soarStory";
 import SuperShoesCase from "@/components/SuperShoesCase";
 import OnCase from "@/components/OnCase";
 import Lightbox from "@/components/Lightbox";
+import ArmsRestCase from "@/components/ArmsRestCase";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -64,7 +65,7 @@ export default async function ProjectPage({ params }: Params) {
             className={
               p.slug === "rabbit"
                 ? "hero-line"
-                : p.slug === "super-shoes" || p.slug === "on-case-study"
+                : p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest"
                   ? "hero-line proj-title--titlecase"
                   : "display proj-hero-title"
             }
@@ -97,7 +98,7 @@ export default async function ProjectPage({ params }: Params) {
       </section>
 
       {/* COVER */}
-      <div className={`proj-cover${p.slug === "super-shoes" || p.slug === "on-case-study" ? " proj-cover--inset" : ""}`}>
+      <div className={`proj-cover${p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" ? " proj-cover--inset" : ""}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={p.cover} alt={`${p.title} — cover`} />
       </div>
@@ -114,6 +115,8 @@ export default async function ProjectPage({ params }: Params) {
         <SuperShoesCase />
       ) : p.slug === "on-case-study" ? (
         <OnCase />
+      ) : p.slug === "armsrest" ? (
+        <ArmsRestCase />
       ) : (
       <div className="gallery-wrap">
         {rows.map((row, ri) =>
