@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
 import Gate from "@/components/Gate";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
-
-const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400", variable: "--font-bebas" });
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const mono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono-sp" });
 
 export const metadata: Metadata = {
   title: {
@@ -27,7 +22,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={`${bebas.variable} ${inter.variable} ${mono.variable}`}>
+      <head>
+        {/* Adobe Fonts — Helvetica Neue LT Pro (used site-wide via --font-* tokens) */}
+        <link rel="stylesheet" href="https://use.typekit.net/pxx6gjb.css" />
+      </head>
+      <body>
         <Gate>
           <Nav />
           <main>{children}</main>

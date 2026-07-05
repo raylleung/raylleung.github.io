@@ -15,9 +15,9 @@
   --accent-press: #3a3a3a;
   --accent-ink: #ffffff;
 
-  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-mono: var(--font-mono-sp), ui-monospace, monospace;
+  --font-display: helvetica-neue-lt-pro, sans-serif;
+  --font-sans: helvetica-neue-lt-pro, sans-serif;
+  --font-mono: helvetica-neue-lt-pro, sans-serif;
 
   --nav-h: 60px;
   --pad: clamp(18px, 5vw, 64px);
