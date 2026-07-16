@@ -89,24 +89,24 @@ img { display: block; max-width: 100%; }
   padding-inline: var(--pad);
   background: color-mix(in srgb, var(--bone) 88%, transparent);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
 }
 .nav-brand {
-  font-family: var(--font-display);
-  font-size: 26px;
-  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  text-transform: lowercase;
   line-height: 1;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
 }
-.nav-brand .dot { width: 9px; height: 9px; background: var(--accent); border-radius: 50%; display: inline-block; }
 .nav-links { display: flex; align-items: center; gap: clamp(16px, 3vw, 34px); }
 .nav-link {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: -0.022em;
+  text-transform: lowercase;
   color: var(--ink-soft);
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
@@ -156,7 +156,7 @@ img { display: block; max-width: 100%; }
 
 /* ============ Hero ============ */
 .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: stretch; border-bottom: 1px solid var(--ink); }
-.hero--text { display: block; }
+.hero--text { display: block; border-bottom: 0; }
 .hero-left { padding: clamp(28px, 4vw, 56px) var(--pad); display: flex; flex-direction: column; justify-content: space-between; gap: 38px; }
 .hero-left--stack { justify-content: center; gap: clamp(20px, 2.6vw, 40px); min-height: min(74vh, 760px); max-width: 880px; }
 .hero-title { font-size: clamp(54px, 11vw, 150px); }
@@ -251,18 +251,6 @@ img { display: block; max-width: 100%; }
 .btn-accent:hover { background: var(--accent-press); border-color: var(--accent-press); color: #fff; }
 .link-u { border-bottom: 1px solid var(--line); transition: border-color 0.2s; }
 .link-u:hover { border-color: var(--accent); }
-
-/* ============ Footer ============ */
-.foot { background: var(--ink); color: var(--bone); }
-.foot a { color: var(--bone); }
-.foot .big { font-family: var(--font-display); font-size: clamp(40px, 9vw, 120px); line-height: 0.85; text-transform: uppercase; }
-.foot-soc { display: flex; flex-wrap: wrap; gap: 8px 10px; }
-.foot-soc a {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 999px; padding: 9px 16px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-.foot-soc a:hover { background: var(--bone); border-color: var(--bone); color: var(--ink); }
 
 /* ============ Password gate ============ */
 .gate {

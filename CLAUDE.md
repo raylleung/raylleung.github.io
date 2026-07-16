@@ -55,8 +55,13 @@ to render the optional `story` blocks.
 **Styling.** Tailwind CSS **v4** (via `@import "tailwindcss"` + `@theme inline` in
 `src/app/globals.css`) layered over a hand-written CSS design system using custom-property
 tokens (the "Performance Lab" palette). Most layout uses semantic classes from `globals.css`
-rather than utility classes. Fonts are loaded with `next/font/google` (Bebas Neue / Inter /
-Space Mono) and exposed as CSS variables in `layout.tsx`.
+rather than utility classes. The site uses a **single typeface, Helvetica Neue LT Pro**,
+loaded as an Adobe Fonts (Typekit) web kit via a `<link>` in `layout.tsx` (kit `pxx6gjb`,
+`use.typekit.net`) — it is *not* self-hosted, so nothing lives in `public/` and the font
+streams from Adobe's CDN at load time. All three CSS tokens in `globals.css`
+(`--font-display`, `--font-sans`, `--font-mono`) point at that one family; the "display /
+sans / mono" distinction is now purely weight/size/letter-spacing/casing, not different
+fonts.
 
 **Path alias.** `@/*` → `./src/*`.
 

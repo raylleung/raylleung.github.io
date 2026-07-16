@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Gate from "@/components/Gate";
 import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Gate>
           <Nav />
           <main>{children}</main>
-          <Footer />
         </Gate>
       </body>
     </html>

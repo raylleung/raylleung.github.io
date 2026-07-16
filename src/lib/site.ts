@@ -25,7 +25,7 @@ export const site = {
     "Running has made me into who I am today, and it's my dream to become a performance running footwear designer — to give back to the sport that has given me so much.",
   ],
   navLinks: [
-    { label: "Work", href: "/#work" },
+    { label: "Work", href: "/work" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],
