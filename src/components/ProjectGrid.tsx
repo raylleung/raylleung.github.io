@@ -14,9 +14,6 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
           <Link href={`/work/${p.slug}`} className="tile" style={{ height: "100%" }}>
             <div className="tile-media">
               <span className="tile-idx">{p.index}</span>
-              <span className="tile-arrow" aria-hidden="true">
-                ↗
-              </span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={p.cover} alt={`${p.title} — ${p.category}`} loading="lazy" decoding="async" />
             </div>

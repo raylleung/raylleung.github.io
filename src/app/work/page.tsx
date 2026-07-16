@@ -10,12 +10,6 @@ export const metadata: Metadata = {
 export default function Work() {
   return (
     <section id="work">
-      <div className="ticker">
-        <div>Selected work</div>
-        <div>{String(projects.length).padStart(2, "0")} Projects</div>
-        <div>Footwear / Product / Furniture</div>
-        <div>Scroll ↓</div>
-      </div>
       <ProjectGrid projects={projects} />
     </section>
   );
