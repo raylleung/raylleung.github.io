@@ -170,7 +170,7 @@ export const projects: Project[] = [
       "Research",
       "Concept"
     ],
-    "year": "",
+    "year": "2023",
     "blurb": "A product that makes running in low light safer — passive and active lighting that also corrects a runner's arm swing.",
     "credit": "Images by Pierce B. Townsend",
     "cover": "/img/_covers/stick-out.jpg",
@@ -183,46 +183,7 @@ export const projects: Project[] = [
       "/img/stick-out/ba7ad15c-8d57-4b40-8b9c-44098cdbc410.jpg",
       "/img/stick-out/ff43a116-775e-414e-aabf-30b7668fe3e0.png"
     ],
-    "story": {
-      "challenge": "Design a product that makes runners running in low-light environments safer and more visible to others.",
-      "stats": [
-        {
-          "value": "35,000",
-          "text": "runners got into accidents with injuries requiring a hospital trip — and the data shows peak times are after dark.",
-          "source": "Department of Transportation, 2012"
-        },
-        {
-          "value": "79%",
-          "text": "of all runners will sustain a running-related injury in any given year, and poor running mechanics may contribute.",
-          "source": "Journal of Orthopaedic & Sports Physical Therapy"
-        }
-      ],
-      "insights": [
-        {
-          "lead": "Dark environment + bad form = increased risk of injury",
-          "sub": "Improper arm swing is one of many causes of bad running form."
-        },
-        {
-          "lead": "Running with dowels = better arm swing and balance",
-          "sub": ""
-        }
-      ],
-      "quote": {
-        "text": "They keep your arms by your side, and minimize twisting arm movements.",
-        "author": "Max Studer — Swiss triathlete, 9th at the Tokyo Olympics"
-      },
-      "brief": "Design a product for runners that provides illumination and corrects their arm swing. It makes running at night or in low light safer by giving runners passive and active lighting, while helping them maintain good balance.",
-      "specs": [
-        {
-          "k": "Functionality",
-          "v": "Provides illumination, improves arm swing, secure grip"
-        },
-        {
-          "k": "Repairment",
-          "v": "Replaceable parts"
-        }
-      ]
-    }
+    "story": null
   },
   {
     "slug": "armsrest",
