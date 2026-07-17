@@ -171,6 +171,7 @@ img { display: block; max-width: 100%; }
   margin: 0;
 }
 .hero-line .hl { color: var(--accent); }
+.hero-nb { white-space: nowrap; }
 .hero-left--stack .lab { text-transform: lowercase; }
 .hero-media { position: relative; border-left: 1px solid var(--ink); background: var(--bone-2); overflow: hidden; min-height: 320px; }
 .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
