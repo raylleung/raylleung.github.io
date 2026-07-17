@@ -347,8 +347,8 @@ img { display: block; max-width: 100%; }
 .proj-nav .t { font-family: var(--font-display); font-size: clamp(26px, 3vw, 44px); }
 
 /* ============ About ============ */
-.about-lead { font-family: var(--font-display); font-size: clamp(30px, 5vw, 64px); line-height: 0.96; text-transform: uppercase; }
-.prose p { font-size: clamp(15px, 1.4vw, 18px); line-height: 1.75; margin: 0 0 18px; max-width: 60ch; }
+.prose p { font-weight: 300; font-size: clamp(15px, 1.45vw, 18px); line-height: 1.7; margin: 0 0 18px; max-width: 64ch; }
+.prose p:last-child { margin-bottom: 0; }
 
 /* ============ Responsive ============ */
 @media (max-width: 860px) {
@@ -376,10 +376,6 @@ img { display: block; max-width: 100%; }
 }
 .contact-row:hover { padding-left: 14px; color: var(--accent); }
 .gallery-wrap { display: flex; flex-direction: column; }
-
-@media (max-width: 860px) {
-  .about-cols { grid-template-columns: minmax(0, 1fr) !important; }
-}
 
 /* ============ Project story ============ */
 .story { border-bottom: 1px solid var(--ink); background: var(--paper); }
