@@ -4,10 +4,8 @@ import { notFound } from "next/navigation";
 import { projects, getProject, adjacent } from "@/lib/projects";
 import Reveal from "@/components/Reveal";
 import ProjectStory from "@/components/ProjectStory";
-import StoryGallery from "@/components/StoryGallery";
-import { rabbitChapters } from "@/lib/rabbitStory";
-import SoarDeck from "@/components/SoarDeck";
-import { soarPhases } from "@/lib/soarStory";
+import RabbitCase from "@/components/RabbitCase";
+import SoarCase from "@/components/SoarCase";
 import SuperShoesCase from "@/components/SuperShoesCase";
 import OnCase from "@/components/OnCase";
 import Lightbox from "@/components/Lightbox";
@@ -66,7 +64,7 @@ export default async function ProjectPage({ params }: Params) {
             className={
               p.slug === "rabbit"
                 ? "hero-line"
-                : p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out"
+                : p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" || p.slug === "soar"
                   ? "hero-line proj-title--titlecase"
                   : "display proj-hero-title"
             }
@@ -99,7 +97,7 @@ export default async function ProjectPage({ params }: Params) {
       </section>
 
       {/* COVER */}
-      <div className={`proj-cover${p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" ? " proj-cover--inset" : ""}`}>
+      <div className={`proj-cover${p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" || p.slug === "soar" || p.slug === "rabbit" ? " proj-cover--inset" : ""}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={p.cover} alt={`${p.title} — cover`} />
       </div>
@@ -109,9 +107,9 @@ export default async function ProjectPage({ params }: Params) {
 
       {/* GALLERY — rabbit gets the chaptered story layout, soar the interactive deck; others use the default flow */}
       {p.slug === "rabbit" ? (
-        <StoryGallery chapters={rabbitChapters} />
+        <RabbitCase />
       ) : p.slug === "soar" ? (
-        <SoarDeck phases={soarPhases} />
+        <SoarCase />
       ) : p.slug === "super-shoes" ? (
         <SuperShoesCase />
       ) : p.slug === "on-case-study" ? (

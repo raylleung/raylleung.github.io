@@ -910,6 +910,7 @@ img { display: block; max-width: 100%; }
 .ss-fork-tab.active { background: var(--ink); color: var(--bone); }
 .ss-fork-tab.active:hover { background: var(--ink); }
 .ss-fork-body { animation: ssFade 0.35s ease; }
+.ss-swap { animation: ssFade 0.35s ease; }
 .ss-fork-tag { margin: 0 0 8px; }
 .ss-fork-title { font-family: var(--font-sans); font-weight: 500; font-size: clamp(18px, 2.2vw, 26px); margin: 0 0 10px; letter-spacing: -0.015em; }
 
