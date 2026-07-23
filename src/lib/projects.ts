@@ -33,9 +33,9 @@ export const projects: Project[] = [
       "Color Design",
       "Tech Pack"
     ],
-    "year": "",
-    "blurb": "A performance running silhouette taken end to end — competitive research, a deliberate color story, and a production-ready tech pack.",
-    "credit": "",
+    "year": "2025",
+    "blurb": "Racing footwear for the running brand — research, a full tech pack, and a color story matched to the apparel line.",
+    "credit": "The Directive Collective",
     "cover": "/img/_covers/rabbit.jpg",
     "gallery": [
       "/img/rabbit/016de4a5-6d23-493c-be13-d5b255140b6f.jpg",
@@ -72,9 +72,9 @@ export const projects: Project[] = [
       "Color Design",
       "Tech Pack"
     ],
-    "year": "",
-    "blurb": "A racing-minded concept built from the ground up: insight-driven research translated into materials, color, and a full technical package.",
-    "credit": "",
+    "year": "2025",
+    "blurb": "Racing footwear for the running brand — research, color, and a full tech pack, carried to a prototype the industry noticed.",
+    "credit": "The Directive Collective",
     "cover": "/img/_covers/soar.png",
     "gallery": [
       "/img/soar/1fea4d1c-85eb-4815-b8b3-60320e12b3d6.jpg",
