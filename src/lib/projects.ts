@@ -18,6 +18,8 @@ export type Project = {
   blurb: string;
   credit: string;
   cover: string;
+  /** Optional grid-tile image; falls back to `cover` when unset. */
+  thumb?: string;
   gallery: string[];
   story: Story | null;
 };
@@ -139,6 +141,7 @@ export const projects: Project[] = [
     "blurb": "A footwear concept imagined for Gen Alpha through the language of On — playful, modular, and built for how the next generation moves.",
     "credit": "",
     "cover": "/img/on-case-study/dd28483e-de69-40a2-854c-b2826b336720.jpeg",
+    "thumb": "/img/on-case-study/b71e0ecd-130d-45bb-9d35-1e8298c67af3.jpg",
     "gallery": [
       "/img/on-case-study/1033f7be-f07e-4a75-82e8-c9c512dbdbc7.jpg",
       "/img/on-case-study/25ad6d6c-2247-45c4-acfb-08497dae4791.jpg",

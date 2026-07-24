@@ -15,7 +15,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
             <div className="tile-media">
               <span className="tile-idx">{p.index}</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={p.cover} alt={`${p.title} — ${p.category}`} loading="lazy" decoding="async" />
+              <img src={p.thumb ?? p.cover} alt={`${p.title} — ${p.category}`} loading="lazy" decoding="async" />
             </div>
             <div className="tile-body">
               <div>
