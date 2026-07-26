@@ -220,10 +220,10 @@ function Construction() {
                 <span className="ss-build-n mono">{l.n}</span>
                 <span className="ss-build-t">{l.title}</span>
               </button>
+              {i === active && <p className="ss-build-body">{l.body}</p>}
             </li>
           ))}
         </ol>
-        <p className="ss-build-body" key={active}>{LAYERS[active].body}</p>
       </div>
     </div>
   );

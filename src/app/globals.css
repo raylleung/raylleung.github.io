@@ -914,15 +914,16 @@ img { display: block; max-width: 100%; }
 .ss-fork-title { font-family: var(--font-sans); font-weight: 500; font-size: clamp(18px, 2.2vw, 26px); margin: 0 0 10px; letter-spacing: -0.015em; }
 
 /* construction (interactive layers) */
-.ss-build { display: grid; grid-template-columns: 0.85fr 1fr; gap: clamp(28px, 4vw, 60px); align-items: center; }
+.ss-build { display: grid; grid-template-columns: 0.85fr 1fr; gap: clamp(28px, 4vw, 60px); align-items: start; }
 .ss-build-fig .ss-fig-img,
 .ss-build-fig { margin: 0; }
 .ss-build-fig .ss-fig-img { background: #fff; border: 1px solid var(--line); box-shadow: 0 24px 50px -34px rgba(0, 0, 0, 0.42); }
 .ss-build-fig img { width: 100%; height: auto; display: block; }
 .ss-build-list { list-style: none; margin: 0 0 clamp(18px, 2.4vw, 28px); padding: 0; border-top: 1px solid var(--line); }
+.ss-build-list li { border-bottom: 1px solid var(--line); }
 .ss-build-btn {
   width: 100%; display: flex; align-items: center; gap: 16px; text-align: left;
-  padding: clamp(13px, 1.8vw, 18px) 4px; background: transparent; border: 0; border-bottom: 1px solid var(--line);
+  padding: clamp(13px, 1.8vw, 18px) 4px; background: transparent; border: 0;
   cursor: pointer; transition: padding-left 0.25s, color 0.2s;
 }
 .ss-build-btn:hover { padding-left: 12px; }
@@ -931,7 +932,8 @@ img { display: block; max-width: 100%; }
 .ss-build-btn.active { color: var(--ink); }
 .ss-build-btn.active .ss-build-n { color: var(--accent); }
 .ss-build-btn.active .ss-build-t { font-weight: 700; }
-.ss-build-body { margin: 0; font-size: clamp(15px, 1.45vw, 18px); line-height: 1.65; max-width: 46ch; color: var(--ink-soft); min-height: 5.5em; animation: ssFade 0.35s ease; }
+/* body aligns with the title text (button pad 4px + number 15px + gap 16px = 35px) */
+.ss-build-body { margin: 0; padding: clamp(4px, 0.8vw, 8px) 4px clamp(16px, 2.2vw, 22px) 35px; font-size: clamp(15px, 1.45vw, 18px); line-height: 1.65; max-width: 46ch; color: var(--ink-soft); animation: ssFade 0.35s ease; }
 
 /* closing */
 .ss-closing { border-top: 1px solid var(--ink); padding-top: clamp(28px, 4vw, 56px); }

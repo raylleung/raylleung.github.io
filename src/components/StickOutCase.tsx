@@ -221,10 +221,10 @@ function Construction() {
                 <span className="ss-build-n mono">{p.n}</span>
                 <span className="ss-build-t">{p.title}</span>
               </button>
+              {i === active && <p className="ss-build-body">{p.body}</p>}
             </li>
           ))}
         </ol>
-        <p className="ss-build-body" key={active}>{PARTS[active].body}</p>
       </div>
     </div>
   );

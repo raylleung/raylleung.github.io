@@ -224,10 +224,10 @@ function LayerBuild({ src, alt, layers }: { src: string; alt: string; layers: { 
                 <span className="ss-build-n mono">{l.n}</span>
                 <span className="ss-build-t">{l.title}</span>
               </button>
+              {i === active && <p className="ss-build-body">{l.body}</p>}
             </li>
           ))}
         </ol>
-        <p className="ss-build-body" key={active}>{layers[active].body}</p>
       </div>
     </div>
   );
