@@ -956,7 +956,7 @@ img { display: block; max-width: 100%; }
 
 @media (prefers-reduced-motion: reduce) {
   .ss-prona-fill { transition: none; }
-  .ss-fork-body, .ss-build-body { animation: none; }
+  .ss-fork-body, .ss-build-body, .ss-swap { animation: none; }
 }
 
 /* Inset (minimized) project cover — used on the Super Shoes page.

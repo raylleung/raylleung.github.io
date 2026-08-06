@@ -11,6 +11,8 @@ import OnCase from "@/components/OnCase";
 import Lightbox from "@/components/Lightbox";
 import ArmsRestCase from "@/components/ArmsRestCase";
 import StickOutCase from "@/components/StickOutCase";
+import PiStoolCase from "@/components/PiStoolCase";
+import PacpackCase from "@/components/PacpackCase";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -64,7 +66,7 @@ export default async function ProjectPage({ params }: Params) {
             className={
               p.slug === "rabbit"
                 ? "hero-line"
-                : p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" || p.slug === "soar"
+                : p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" || p.slug === "soar" || p.slug === "pi-stool" || p.slug === "pacpack"
                   ? "hero-line proj-title--titlecase"
                   : "display proj-hero-title"
             }
@@ -97,7 +99,7 @@ export default async function ProjectPage({ params }: Params) {
       </section>
 
       {/* COVER */}
-      <div className={`proj-cover${p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" || p.slug === "soar" || p.slug === "rabbit" ? " proj-cover--inset" : ""}`}>
+      <div className={`proj-cover${p.slug === "super-shoes" || p.slug === "on-case-study" || p.slug === "armsrest" || p.slug === "stick-out" || p.slug === "soar" || p.slug === "rabbit" || p.slug === "pi-stool" || p.slug === "pacpack" ? " proj-cover--inset" : ""}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={p.cover} alt={`${p.title} — cover`} />
       </div>
@@ -118,6 +120,10 @@ export default async function ProjectPage({ params }: Params) {
         <ArmsRestCase />
       ) : p.slug === "stick-out" ? (
         <StickOutCase />
+      ) : p.slug === "pi-stool" ? (
+        <PiStoolCase />
+      ) : p.slug === "pacpack" ? (
+        <PacpackCase />
       ) : (
       <div className="gallery-wrap">
         {rows.map((row, ri) =>
